@@ -2,7 +2,7 @@ import axios from "axios";
 import { UserProfileToken } from "../Models/User";
 import { handleError } from "../Helpers/ErrorHandler";
 
-const api = "https://princess-stock-api-a2c7e16cc89b.herokuapp.com/";
+const api = "https://princess-stock-api-a2c7e16cc89b.herokuapp.com/api";
 
     export const loginAPI = async (username: 
     string, password: string) => {try {

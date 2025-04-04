@@ -1,11 +1,11 @@
-import logo from "./logo.png";
-import logo2 from "./logo_princess3.png"
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo4 from "./logo_princess4.png";
+import { useAuth } from "../../Context/useAuth"; // Assuming useAuth provides user data and logout
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // State to toggle menu
+  const { user, logout } = useAuth(); // Access user and logout function from context
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen); // Toggle menu open/close
@@ -57,25 +57,37 @@ const Navbar = () => {
             isMenuOpen ? "block" : "hidden"
           } lg:flex flex-col lg:flex-row items-center space-x-6`}
         >
-          {/* Navbar options */}
+          {/* Common Navbar Links */}
           <Link to="/search" className="text-black hover:text-darkBlue">
             Search
           </Link>
-          <Link to="/login" className="hover:text-darkBlue">
-            Login
-          </Link>
-          <Link
-            to="/register"
-            className="px-8 py-3 font-bold rounded text-white bg-lightGreen hover:opacity-70"
-          >
-            Signup
-          </Link>
-          <a
-            href="/"
-            className="px-8 py-3 font-bold rounded text-white bg-lightGreen hover:opacity-70"
-          >
-            Logout
-          </a>
+
+          {/* Conditional Rendering for Authenticated Users */}
+          {user ? (
+            <>
+              <div className="hover:text-darkBlue">
+                Welcome, {user.userName || "Guest"}
+              </div>
+              <button
+                onClick={logout}
+                className="px-8 py-3 font-bold rounded text-white bg-lightGreen hover:opacity-70"
+              >
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+              <Link to="/login" className="hover:text-darkBlue">
+                Login
+              </Link>
+              <Link
+                to="/register"
+                className="px-8 py-3 font-bold rounded text-white bg-lightGreen hover:opacity-70"
+              >
+                Signup
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </nav>

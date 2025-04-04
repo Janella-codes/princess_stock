@@ -73,6 +73,8 @@ import React from "react";
       toast.success("Login Success!");
       navigate("/search");}})
       .catch((e) => toast.warning("Server error occured"));};
+
+      
   
     const isLoggedIn = () => {
       return !!user;};

@@ -2,7 +2,7 @@ import axios from "axios";
 import { CommentGet, CommentPost } from "../Models/Comment";
 import { handleError } from "../Helpers/ErrorHandler";
 
-const api = "http://localhost:5239/api/comment/";
+const api = "https://princess-stock-api-a2c7e16cc89b.herokuapp.com/api/comment/";
 
 export const commentPostAPI = async (
   title: string,

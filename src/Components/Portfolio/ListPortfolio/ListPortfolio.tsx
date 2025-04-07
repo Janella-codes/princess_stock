@@ -27,8 +27,7 @@ interface Props {
               })
             ) : (
               <h3 className="mb-3 mt-3 text-xl font-semibold text-center md:text-xl">
-                Your portfolio is empty. Add some stocks!
-                You suck at investing.🤷‍♀️👏😭👺💩
+                Your portfolio is empty. Try adding some stocks!🤷‍♀️👏😭👺
               </h3>
               
             )}
@@ -36,7 +35,7 @@ interface Props {
           
         </div>
         <h1 className="mb-3 mt-3 text-xl font-semibold text-center md:text-xl">
-          Do Better ~~~~ Dumbass ~~ Fuck you</h1>☝💅🙏
+          You can do it! </h1>☝💅🙏
 
       </section>
     );

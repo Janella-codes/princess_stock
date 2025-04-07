@@ -26,7 +26,7 @@ const DeletePortfolio: React.FC<Props> = ({ portfolioValue, onPortfolioDelete })
         value={portfolioValue} // Controlled input
         onChange={handleChange} // Add this handler
         readOnly // Optional: Make the field read-only since it’s displaying static info
-        className="input-field"
+        className="bg-cyan-200 input-field w-20 p-2 border rounded text-xl font-semibold text-center" // Add your styles here
       />
       <button type="submit">Delete</button>
     </form>

@@ -90,7 +90,7 @@ const SearchPage = (props: Props) => {
   }
 
   return (
-    <div className="App">
+    <div >
         <Search 
             onSearchSubmit={onSearchSubmit} 
             search={search} 

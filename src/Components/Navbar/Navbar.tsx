@@ -65,6 +65,9 @@ const Navbar = () => {
           {/* Conditional Rendering for Authenticated Users */}
           {user ? (
             <>
+            <Link to="/loggedinsearchpage" className="hover:text-darkBlue">
+            loggedinsearchpage
+            </Link>
               <div className="hover:text-darkBlue">
                 Welcome, {user.userName || "Guest"}
               </div>
@@ -86,7 +89,11 @@ const Navbar = () => {
               >
                 Signup
               </Link>
+              <Link to="/loggedinsearchpage" className="hover:text-darkBlue">
+            loggedinsearchpage
+            </Link>
             </>
+     
           )}
         </div>
       </div>

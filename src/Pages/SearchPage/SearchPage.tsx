@@ -7,34 +7,43 @@ import CardList from '../../Components/CardList/CardList';
 import { PortfolioGet } from '../../Models/Portfolio';
 import { portfolioAddAPI, portfolioDeleteAPI, portfolioGetAPI } from '../../Services/PortfolioService';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
-type Props = {}
+interface Props {
+  portfolioValue: string;
+  onPortfolioDelete: (e: SyntheticEvent) => void;
+}
 
 const SearchPage = (props: Props) => {
+  const navigate = useNavigate(); // Initialize useNavigate here
+  const [user, setUser] = useState(null);
     const [search, setSearch] = useState<string>('');
     const [PortfolioValues, setPortfolioValues] = useState<PortfolioGet[] | null>([]);
     const [searchResult, setSearchResults] = useState<CompanySearch[]>([]);
     const [serverError, setServerError] = useState<string>('');
 
     useEffect(() => {
-        getPortFolio();
+        getPortfolio();
     }, []);
 
   const handleSearchChange = (e: ChangeEvent<HTMLInputElement> ) => {
       setSearch(e.target.value);
   }
+  const clearUserData = () => {
+    setUser(null);
+    setPortfolioValues([]);
+};
 
-  const getPortFolio = () => {
-      portfolioGetAPI()
+  const getPortfolio = () => {
+    portfolioGetAPI()
       .then((res) => {
-      if (res?.data) {
-        setPortfolioValues(res?.data);
-        getPortFolio();
-      }
-      }).catch((err) => {
-        toast.warning("Error fetching portfolio data");
-        setPortfolioValues(null);
+        if (res?.data) {
+          setPortfolioValues(res?.data);
+        }
       })
+      .catch((e) => {
+        setPortfolioValues(null);
+      });
   };
 
   const onPortfolioCreate = async (e: any) => {
@@ -43,22 +52,31 @@ const SearchPage = (props: Props) => {
       .then((res) => {
         if (res?.status === 204) {
           toast.success("Company added to portfolio successfully!");
-          getPortFolio();
+          getPortfolio();
         }
       }).catch((err) => {
         toast.warning("Error adding company to portfolio");
       })
   };
 
-  const onPortfolioDelete = (e: any) => {
-      e.preventDefault();
-      portfolioDeleteAPI(e.target[0].value).then((res) => {
-        if (res?.status === 204) {
-          toast.success("Company removed from portfolio successfully!");
-          getPortFolio();
-        }
-      });
-  }
+  const onPortfolioDelete = (e: SyntheticEvent) => {
+    e.preventDefault();
+    const target = e.target as HTMLFormElement; // Narrow e.target to HTMLFormElement
+    const input = target[0] as HTMLInputElement; // Narrow the specific element to HTMLInputElement
+    const symbol = input.value; // Access the value property safely
+    portfolioDeleteAPI(symbol)
+        .then((res) => {
+            if (res?.status === 204) {
+                toast.success("Company removed from portfolio successfully!");
+                getPortfolio(); // Refresh the portfolio data
+                console.log("Redirecting to LoggedInSearchPage...");
+                navigate("/loggedinsearchpage"); // Redirect to LoggedInSearchPage
+            }
+        })
+        .catch((err) => {
+            toast.warning("Error removing company from portfolio");
+        });
+};
 
 
   const onSearchSubmit = async (e: SyntheticEvent) => {

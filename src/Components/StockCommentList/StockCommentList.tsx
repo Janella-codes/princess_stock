@@ -1,5 +1,6 @@
-import { CommentGet } from "../../../Models/Comment";
-import StockCommentListItem from "../StockCommentListItem/StockCommentListItem";
+import { CommentGet } from "../../Models/Comment";
+import StockCommentListItem from "../StockComment/StockCommentListItem/StockCommentListItem";
+
 
 
 
@@ -20,4 +21,3 @@ type Props = {
   };
   
   export default StockCommentList;
-  

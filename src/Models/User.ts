@@ -1,8 +1,9 @@
 export type UserProfileToken = {
-    userName: string;
-    email: string;
-    token: string;
-  };
+  userId: string; // Define userId as a string property
+  userName: string;
+  email: string;
+  token: string;
+};
   
   export type UserProfile = {
     userName: string;

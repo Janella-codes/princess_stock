@@ -3,8 +3,8 @@ import { CommentGet } from "../../Models/Comment";
 import { commentGetAPI, commentPostAPI } from "../../Services/CommentService";
 import { toast } from "react-toastify";
 import Spinner from "../Spinners/Spinner";
-import StockCommentList from "./StockCommentList/StockCommentList";
 import StockCommentForm from "./StockCommentForm/StockCommentForm";
+import StockCommentList from "../StockCommentList/StockCommentList";
 
 type Props = {
     stockSymbol: string;

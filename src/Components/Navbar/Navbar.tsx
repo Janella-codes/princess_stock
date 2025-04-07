@@ -16,7 +16,7 @@ const Navbar = () => {
       <div className="flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center space-x-20">
-          <Link to="/">
+          <Link to="/search" className="flex items-center">
             <img
               src={logo4}
               alt="Logo"
@@ -29,76 +29,78 @@ const Navbar = () => {
             />
           </Link>
         </div>
+  
+     {/* Three Dots Icon (visible on small screens) */}
+<button
+  onClick={toggleMenu}
+  className="block lg:hidden text-black focus:outline-none"
+>
+  <svg
+    className="w-6 h-6"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle cx="12" cy="5" r="1.5" />
+    <circle cx="12" cy="12" r="1.5" />
+    <circle cx="12" cy="19" r="1.5" />
+  </svg>
+</button>
 
-        {/* Hamburger Icon (visible on small screens) */}
-        <button
-          onClick={toggleMenu}
-          className="block lg:hidden text-black focus:outline-none"
-        >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </button>
-
+  
         {/* Links (Desktop and Mobile) */}
         <div
           className={`${
             isMenuOpen ? "block" : "hidden"
           } lg:flex flex-col lg:flex-row items-center space-x-6`}
         >
-          {/* Common Navbar Links */}
-          <Link to="/search" className="text-black hover:text-darkBlue">
-            Search
-          </Link>
+  <div className="flex flex-col space-y-4">
+  {user ? (
+    <>
+      <Link
+        to="/loggedinsearchpage"
+        className="px-8 py-3 font-bold rounded text-white bg-cyan-300 hover:opacity-70"
+      >
+        My Stocks
+      </Link>
+      <div className="text-lg font-semibold text-darkBlue">
+        Welcome, <span className="text-cyan-500">{user?.userName || "Guest"}</span>
+      </div>
+      <button
+        onClick={logout}
+        className="px-8 py-3 font-bold rounded text-white bg-cyan-300 hover:opacity-70"
+      >
+        Logout
+      </button>
+    </>
+  ) : (
+    <>
+      <Link
+        to="/search"
+        className="px-8 py-3 font-bold rounded text-white bg-cyan-300 hover:opacity-70"
+      >
+        Search
+      </Link>
+      <Link to="/login" className="px-8 py-3 font-bold rounded text-white bg-cyan-300 hover:opacity-70">
+        Login
+      </Link>
+      <Link
+        to="/register"
+        className="px-8 py-3 font-bold rounded text-white bg-cyan-300 hover:opacity-70"
+      >
+        Signup
+      </Link>
+    </>
+  )}
+</div>
 
-          {/* Conditional Rendering for Authenticated Users */}
-          {user ? (
-            <>
-            <Link to="/loggedinsearchpage" className="hover:text-darkBlue">
-            loggedinsearchpage
-            </Link>
-              <div className="hover:text-darkBlue">
-                Welcome, {user.userName || "Guest"}
-              </div>
-              <button
-                onClick={logout}
-                className="px-8 py-3 font-bold rounded text-white bg-lightGreen hover:opacity-70"
-              >
-                Logout
-              </button>
-            </>
-          ) : (
-            <>
-              <Link to="/login" className="hover:text-darkBlue">
-                Login
-              </Link>
-              <Link
-                to="/register"
-                className="px-8 py-3 font-bold rounded text-white bg-lightGreen hover:opacity-70"
-              >
-                Signup
-              </Link>
-              <Link to="/loggedinsearchpage" className="hover:text-darkBlue">
-            loggedinsearchpage
-            </Link>
-            </>
-     
-          )}
+
+
         </div>
       </div>
     </nav>
   );
-};
+}  
 
 export default Navbar;

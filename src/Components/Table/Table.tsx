@@ -16,7 +16,7 @@ type Props = {
     const renderedHeaders = config.map((config: any) => {
       return (
         <th
-          className="bg-emerald-200 p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+          className="bg-cyan-100 p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
           key={config.label}
         >
           {config.label}
@@ -24,7 +24,7 @@ type Props = {
       );
     });
     return (
-      <div className="bg-emerald-200 shadow rounded-lg p-4 sm:p-6 xl:p-8 ">
+      <div className="bg-cyan-200 shadow rounded-lg p-4 sm:p-6 xl:p-8 ">
         <table className="min-w-full divide-y divide-gray-200 m-5">
           <thead className="bg-gray-50">{renderedHeaders}</thead>
           <tbody>{renderedRows}</tbody>

@@ -26,7 +26,7 @@ const CompanyPage = (props: Props) => {
     }, [])
     return <>
         {company ? (
-       <div className="w-full relative flex bg-color-#6a96b3 ct-docs-disable-sidebar-content overflow-x-hidden">
+       <div className="w-full relative flex bg-cyan-100 ct-docs-disable-sidebar-content overflow-x-hidden">
         <Sidebar />
         <CompanyDashboard ticker={ticker!}>
             <Tile title="Company Name" subTitle={company.companyName} />
@@ -35,7 +35,7 @@ const CompanyPage = (props: Props) => {
             <Tile title="Sector" subTitle={company.sector} />
             <CompFinder ticker={company.symbol} />
             <TenKFinder ticker={company.symbol} />
-            <p className="bg-emerald-200 shadow rounded text-medium font-medium text-gray-900 p-3 mt-1 m-4">
+            <p className="bg-cyan-200 shadow rounded text-medium font-medium text-gray-900 p-3 mt-1 m-4">
             {company.description}
             </p>
         </CompanyDashboard>

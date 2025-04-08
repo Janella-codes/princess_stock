@@ -52,7 +52,11 @@ const LoggedInSearchPage = () => {
             {/* Link back to the main search page with cache clearing */}
             <button onClick={clearCacheAndRedirect} className="back-to-search">
                 Back to Search
-            </button>
+            </button><br /><br />
+
+            <Link to="https://www.janellasplace.com" className="search-link">Janella's place</Link>
+
+            {/* Search component for searching stocks */}
         </div>
     );
 };

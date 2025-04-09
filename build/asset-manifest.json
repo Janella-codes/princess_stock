@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.196a3d25.css",
+    "main.js": "/static/js/main.dfe67e16.js",
+    "static/js/453.d855a71b.chunk.js": "/static/js/453.d855a71b.chunk.js",
+    "static/media/princess_hero5.png": "/static/media/princess_hero5.76d73e6f7565c8ac8515.png",
+    "static/media/logo_princess4.png": "/static/media/logo_princess4.b3f1975a23e739564931.png",
+    "index.html": "/index.html",
+    "main.196a3d25.css.map": "/static/css/main.196a3d25.css.map",
+    "main.dfe67e16.js.map": "/static/js/main.dfe67e16.js.map",
+    "453.d855a71b.chunk.js.map": "/static/js/453.d855a71b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.196a3d25.css",
+    "static/js/main.dfe67e16.js"
+  ]
+}

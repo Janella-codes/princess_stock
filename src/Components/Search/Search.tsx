@@ -59,8 +59,8 @@ const Search: React.FC<Props> = ({ search, handleSearchChange, onSearchSubmit }:
       </section>
 
       {/* Add the results section */}
-      <section ref={resultsRef} className="max-w-4xl mx-auto mt-10 p-6 bg-gray-100 rounded-lg">
-        <h2 className="text-2xl font-bold mb-4">Search Results</h2>
+      <section ref={resultsRef} >
+        
         {/* Render search results here */}
       </section>
     </>

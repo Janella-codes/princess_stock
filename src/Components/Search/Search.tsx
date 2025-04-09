@@ -15,7 +15,7 @@ const Search: React.FC<Props> = ({ search, handleSearchChange, onSearchSubmit }:
 
       // Scroll into view with offset
   if (resultsRef.current) {
-    const offset = -250; // Adjust this value for more scrolling
+    const offset = -650; // Adjust this value for more scrolling
     const scrollPosition =
       resultsRef.current.getBoundingClientRect().top +
       window.pageYOffset -

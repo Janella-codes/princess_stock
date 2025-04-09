@@ -9,7 +9,7 @@ interface Props {
 const Search : React.FC<Props> = ({search, handleSearchChange, onSearchSubmit}: Props): JSX.Element => {
     
     return (
-        <section className="bg-gray-100">
+        <section className="bg-#97c0db">
         <div className="max-w-4xl mx-auto p-6 space-y-6">
           <form
             className="form relative flex  w-full p-10  bg-darkBlue rounded-lg md:flex-row md:space-y-0 md:space-x-3"

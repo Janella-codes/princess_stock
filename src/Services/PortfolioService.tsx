@@ -6,6 +6,10 @@ import { handleError } from "../Helpers/ErrorHandler";
 
 const api = "https://princess-stock-api-a2c7e16cc89b.herokuapp.com/api/portfolio/";
 
+//"http://localhost:5239/api/portfolio/";
+
+//"https://princess-stock-api-a2c7e16cc89b.herokuapp.com/api/portfolio/";
+
 
 export const portfolioAddAPI = async (symbol: string) => {
     try {

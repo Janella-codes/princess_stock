@@ -4,6 +4,10 @@ import { handleError } from "../Helpers/ErrorHandler";
 
 const api = "https://princess-stock-api-a2c7e16cc89b.herokuapp.com/api/comment/";
 
+//"http://localhost:5239/api/comment/";
+
+//"https://princess-stock-api-a2c7e16cc89b.herokuapp.com/api/comment/";
+
 export const commentPostAPI = async (
   title: string,
   content: string,

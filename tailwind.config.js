@@ -15,7 +15,9 @@ module.exports = {
         lightGreen: "hsl(156.62, 73.33%, 58.82%)",
       },
       fontFamily: {
-        sans: ["Poppins", "sans-serif"],
+        sans: ["Poppins", "sans-serif", "Inter"],
+        inter: ["Inter", "sans-serif"],
+        oldEnglish: ["Old English Text MT", "serif", '"UnifrakturCook"'],
       },
       spacing: {
         180: "32rem",

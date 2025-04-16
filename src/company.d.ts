@@ -338,4 +338,12 @@ export interface CompanySearch {
     link: string;
     finalLink: string;
   }
+
+  export interface CompanyYearToDatePerformance {
+    symbol: string;
+    date: string;
+    price: number;
+    volume: number;
+  }
+  
   

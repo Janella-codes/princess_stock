@@ -46,6 +46,14 @@ const Sidebar = (props: Props) => {
               <SlGraph />
               <h6 className="ml-3">Historical Dividend</h6>
             </Link>
+            <Link
+              to="ytd"
+              className="flex md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
+            >
+              <SlGraph />
+              <h6 className="ml-3">YTD</h6>
+            </Link>
+
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { CompanyBalanceSheet, CompanyCashFlow, CompanyCompData, CompanyHistoricalDividend, CompanyIncomeStatement, CompanyKeyMetrics, CompanyProfile, CompanySearch, CompanyTenK } from "./company";
+import { CompanyBalanceSheet, CompanyCashFlow, CompanyCompData, CompanyHistoricalDividend, CompanyIncomeStatement, CompanyKeyMetrics, CompanyProfile, CompanySearch, CompanyTenK, CompanyYearToDatePerformance } from "./company";
 
 
 export interface SearchResponse {
@@ -111,4 +111,17 @@ export const getHistoricalDividend = async (query: string) => {
     console.log("error message: ", error.message);
   }
 };
+
+export const getYearToDatePerformance = async (query: string) => {
+  try {
+    const data = await axios.get<CompanyYearToDatePerformance>(
+      `https://financialmodelingprep.com/stable/historical-price-eod/light?symbol=${query}&apikey=${process.env.REACT_APP_API_KEY}`
+    );
+    return data;
+  } catch (error: any) {
+    console.log("error message: ", error.message);
+  }
+};
+
+
 

@@ -14,6 +14,7 @@ import ProtectedRoute from "./ProtectedRoute";
 import LoggedInSearchPage from "../Pages/LoggedInSearchPage/LoggedInSearchPage";
 import SearchPage from "../Pages/SearchPage/SearchPage"; // Add this import
 import { SyntheticEvent } from "react";
+import Ytd from "../Components/Ytd/Ytd";
 
 export const router = createBrowserRouter([
     {
@@ -51,6 +52,7 @@ export const router = createBrowserRouter([
             { path: "balance-sheet", element: <BalanceSheet /> },
             { path: "cashflow-statement", element: <CashflowStatement /> },
             { path: "historical-dividend", element: <HistoricalDividend /> },
+            { path: "ytd", element: <Ytd /> },
           ],
         },
       ],
